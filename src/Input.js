@@ -2,16 +2,20 @@ import {useState} from 'react'
 
 
 const Input = () => {
-const [name, setName] = useState("")
+const [name, setName] = useState('')
 
 const handleSubmit = (e)=>{
   e.preventDefault()
-  alert(`submitting name ${name}`)
+  const result = { name }
+  console.log(result)
 }
+
   return ( 
 
-
-    <form onSubmit={handleSubmit}>
+<>
+    <form 
+    onSubmit={handleSubmit}
+    >
     <label>
       Name:
       <input
@@ -23,7 +27,8 @@ const handleSubmit = (e)=>{
     </label>
     <input type="submit" value="Submit"/>
     </form>
-
+    <div>{name}</div>
+</>
    );
 }
  
