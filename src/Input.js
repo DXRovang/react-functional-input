@@ -18,8 +18,6 @@ const updateList = () =>{
   let newArray = listArray.filter((_, index)=>(
     index !== 1
   ))
-
-//  [ ...newArray.slice(0,1), "Pippo",...newArray.slice(1)]
   setList(
     [...newArray.slice(0,1), "Pippo",...newArray.slice(1)]
   )
