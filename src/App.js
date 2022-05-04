@@ -26,19 +26,27 @@ function App() {
     setWords(wc)
   }
 
+  const mapIndex = () =>{
+    let list = numbers.map((_,index)=>(
+      index
+    ))
+    console.log(list)
+  }
   const spl = ()=>{
     let n = numbers
     console.log(n.slice(2,5))
   }
-
+  const wordMap = words.map(w=><div>{w}</div>)
+  const unNumMap = numbers.map(n=>n + "  ")
+  const numFilt = numbers.filter(n=>(n>10)).map(n=>n + "  ")
   return (
     <>
       
       <div>
-        Unsorted: {numbers.map(n=>n + "  ")}
+        Unsorted: {unNumMap}
       </div>
       <div>
-        {numbers.filter(n=>(n>10)).map(n=>n + "  ")}
+        {numFilt}
       </div>
       <div>
         <button onClick={spread}>spread</button>
@@ -47,11 +55,15 @@ function App() {
       <button onClick={spl}>spl</button>
       </div>
       <div>
-        {words.map(w=><div>{w}</div>)}
+        {wordMap}
         <button onClick={changeWord}>Change</button>
       </div>
       <Input/>
       <Func/>
+      <div>
+        {numbers}
+        <button onClick={mapIndex}>click me</button>
+      </div>
     </>
   );
 }
