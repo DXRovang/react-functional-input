@@ -39,9 +39,18 @@ function App() {
   const wordMap = words.map(w=><div>{w}</div>)
   const unNumMap = numbers.map(n=>n + "  ")
   const numFilt = numbers.filter(n=>(n>10)).map(n=>n + "  ")
+  let myRegEx = new RegExp(/re*n/)
+  const search = () =>{
+    let hello = words.filter(w=>myRegEx.test(w))
+    setWords(hello)
+  }
   return (
     <>
-      
+      <div>
+        {wordMap}
+        <button onClick={search}>Search</button>
+      </div>
+
       <div>
         Unsorted: {unNumMap}
       </div>
