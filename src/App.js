@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      <Input/>
+      
       <div>
         Unsorted: {numbers.map(n=>n + "  ")}
       </div>
@@ -54,7 +54,7 @@ function App() {
         {words.map(w=><div>{w}</div>)}
         <button onClick={changeWord}>Change</button>
       </div>
-
+      <Input/>
     </>
   );
 }
